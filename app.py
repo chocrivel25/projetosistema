@@ -2,11 +2,11 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from src.models.user import db, User
-from src.models.sale import Sale
-from src.models.expense import Expense
-from src.models.ad_expense import AdExpense
-from src.models.payment import Payment
+from models.user import db, User
+from models.sale import Sale
+from models.expense import Expense
+from models.ad_expense import AdExpense
+from models.payment import Payment
 from sqlalchemy import inspect, MetaData, Table, Column, Integer, ForeignKey, text
 from sqlalchemy.exc import SQLAlchemyError
 import pymysql
@@ -132,7 +132,7 @@ def fix_foreign_keys():
 
 if __name__ == "__main__":
     # Importar a aplicação Flask para obter o contexto
-    from src.main import app
+    from main import app
     
     with app.app_context():
         print("Validando foreign keys e índices...")
